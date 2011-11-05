@@ -48,7 +48,7 @@ class Orbiter {
     
       translate(pos.x, pos.y);
     
-      rotate(theta);
+      rotate(theta * (1 - flatness));
       stroke(0, 50);
       line(0, 0, 0, radius, 0, h * depth);
       

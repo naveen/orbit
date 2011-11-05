@@ -8,6 +8,9 @@ float tdepth = 1;
 float rot = 1;
 float trot = 1;
 
+float flatness = 0;
+float tflatness = 0;
+
 void setup() {
   // add 3d renderer, import->opengl
   size(700,700,OPENGL);
@@ -21,12 +24,15 @@ void setup() {
 
 // rotate z (pinwheel); x (foosball); y (ballerina)
 void draw() {
-  // move the depth towards the target depth
+  // easing function: move the depth towards the target depth
   // (every frame...i move a tenth of the way to my target)
   depth += (tdepth - depth) * 0.1;
   
-  // rotate weight
+  // easing function: rotate weight
   rot += (trot - rot) * 0.1;
+  
+  // easing function: flatness across an axis
+  flatness += (tflatness - flatness) * 0.1;
   
   background(255);
   
@@ -51,4 +57,6 @@ void keyPressed() {
   
   // toggle rotate weight (trot = toggle; rot in here = hold for slowness)
   if (key == 'r') trot = (trot == 0) ? 1:0;
+  
+  if (key == 'f') tflatness = (tflatness == 0) ? 1:0;
 }
