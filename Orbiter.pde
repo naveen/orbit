@@ -40,7 +40,7 @@ class Orbiter {
   }
   
   void update() {
-    theta += thetaSpeed;
+    theta += thetaSpeed * rot;
   }
   
   void render() {

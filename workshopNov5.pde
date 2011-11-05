@@ -5,6 +5,9 @@ Orbiter bob = new Orbiter();
 float depth = 1;
 float tdepth = 1;
 
+float rot = 1;
+float trot = 1;
+
 void setup() {
   // add 3d renderer, import->opengl
   size(700,700,OPENGL);
@@ -21,6 +24,9 @@ void draw() {
   // move the depth towards the target depth
   // (every frame...i move a tenth of the way to my target)
   depth += (tdepth - depth) * 0.1;
+  
+  // rotate weight
+  rot += (trot - rot) * 0.1;
   
   background(255);
   
@@ -40,6 +46,9 @@ void draw() {
 }
 
 void keyPressed() {
-  // toggle depth by keypress
+  // toggle depth
   if (key == 'd') tdepth = (tdepth == 0) ? (1):(0);
+  
+  // toggle rotate weight (trot = toggle; rot in here = hold for slowness)
+  if (key == 'r') trot = (trot == 0) ? 1:0;
 }
