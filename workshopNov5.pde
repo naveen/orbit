@@ -5,6 +5,7 @@ void setup() {
   background(255);
   smooth();
   
+  bob.thetaSpeed = 0.01;
   bob.spawn();
 }
 
