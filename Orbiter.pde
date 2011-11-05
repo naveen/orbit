@@ -28,7 +28,7 @@ class Orbiter {
     for (int i = 0; i < childCount; i++) {
       Orbiter child = new Orbiter();
       child.radius = random(50, 200);
-      child.thetaSpeed = random(-0.1, 0.1); // theta will be positive/negative (forward/backwards)
+      child.thetaSpeed = random(-0.01, 0.01); // theta will be positive/negative (forward/backwards)
       child.generation = generation + 1;
       
       if (child.generation < 3) child.spawn();
