@@ -17,6 +17,8 @@ void setup() {
 void draw() {
   background(255);
   
+  lights();
+  
   // make sure the 0, 0 point is in the middle of the screen
   translate(width/2 , height/2);
   
