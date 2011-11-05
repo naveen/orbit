@@ -24,6 +24,8 @@ class Orbiter {
     // create children
     for (int i = 0; i < childCount; i++) {
       Orbiter child = new Orbiter();
+      child.radius = random(50, 200);
+      child.thetaSpeed = random(-0.1, 0.1); // theta will be positive/negative (forward/backwards)
       children.add(child);
     }
   }
