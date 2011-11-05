@@ -1,7 +1,11 @@
+import processing.opengl.*;
+
 Orbiter bob = new Orbiter();
 
 void setup() {
-  size(700,700);
+  // add 3d renderer, import->opengl
+  size(700,700,OPENGL);
+  
   background(255);
   smooth();
   
