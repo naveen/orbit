@@ -1,3 +1,4 @@
+import processing.video.*;
 import processing.opengl.*;
 
 Orbiter bob = new Orbiter();
@@ -10,6 +11,9 @@ float trot = 1;
 
 float flatness = 0;
 float tflatness = 0;
+
+MovieMaker mm;
+boolean recording = false;
 
 void setup() {
   // add 3d renderer, import->opengl
@@ -50,6 +54,8 @@ void draw() {
   // draw a single orbiter
   bob.update();
   bob.render();
+  
+  if (recording) mm.addFrame();
 }
 
 void keyPressed() {
@@ -62,6 +68,17 @@ void keyPressed() {
   if (key == 'f') tflatness = (tflatness == 0) ? 1:0;
   
   if (key == 's') saveImage();
+  if (key == 'm') {
+    if (recording) {
+      recording = false;
+      mm.finish();
+      println("movie record finished");
+    } else {
+      recording = true;
+      mm = new MovieMaker(this, width, height, "drawing.mov", 30, MovieMaker.H263, MovieMaker.HIGH);
+      println("movie record started");
+    }
+  }
 }
 
 void saveImage() {
