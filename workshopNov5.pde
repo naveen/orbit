@@ -13,7 +13,7 @@ float tflatness = 0;
 
 void setup() {
   // add 3d renderer, import->opengl
-  size(700,700,OPENGL);
+  size(1280,720,OPENGL);
   
   background(255);
   smooth();
@@ -39,8 +39,9 @@ void draw() {
   lights();
   
   // make sure the 0, 0 point is in the middle of the screen
-  translate(width/2 , height/2);
+  translate(width/2 , height/2 + 200);
   
+  scale(1.5);
   rotateX( 1.4 );
 
   // change tallness of map interactively
