@@ -40,6 +40,7 @@ class Orbiter {
       translate(pos.x, pos.y);
     
       rotate(theta);
+      stroke(0, 50);
       line(0, 0, radius, 0);
       
       // two ways to do this, one standard, one with translate
