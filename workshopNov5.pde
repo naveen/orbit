@@ -22,7 +22,8 @@ void draw() {
   // make sure the 0, 0 point is in the middle of the screen
   translate(width/2 , height/2);
   
-  rotateX(1.3); // a little bit less than pi/2
+  // map allows us to capture mouse movement in a smaller range
+  rotateX( map(mouseY, 0, height, 0, PI/2) );
   
   // draw a single orbiter
   bob.update();
