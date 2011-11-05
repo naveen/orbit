@@ -64,7 +64,7 @@ class Orbiter {
       
       // ellipse(0, 0, 5, 5);
       noStroke();
-      float c = map(generation, 0, 5, 0, 255); // let's map generation to color
+      float c = map(generation, 0, 5, 0, 200); // let's map generation to color
       colorMode(HSB);
       fill(c, 255, 255);
       box(map(h, 0, 50, 0, 10));
