@@ -50,11 +50,11 @@ class Orbiter {
     
       rotate(theta);
       stroke(0, 50);
-      line(0, 0, 0, radius, 0, h);
+      line(0, 0, 0, radius, 0, h * depth);
       
       // two ways to do this, one standard, one with translate
       // ellipse(radius, 0, 5, 5);
-      translate(radius, 0, h);
+      translate(radius, 0, h * depth);
       
       // update and render children
       for (Orbiter child:children) {

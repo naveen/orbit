@@ -2,6 +2,8 @@ import processing.opengl.*;
 
 Orbiter bob = new Orbiter();
 
+float depth = 1;
+
 void setup() {
   // add 3d renderer, import->opengl
   size(700,700,OPENGL);
@@ -22,8 +24,10 @@ void draw() {
   // make sure the 0, 0 point is in the middle of the screen
   translate(width/2 , height/2);
   
-  // map allows us to capture mouse movement in a smaller range
-  rotateX( map(mouseY, 0, height, 0, PI/2) );
+  rotateX( 1.4 );
+
+  // change tallness of map
+  depth = map(mouseY, 0, height, 1, 0);
   
   // draw a single orbiter
   bob.update();
