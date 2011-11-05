@@ -4,9 +4,12 @@ void setup() {
   size(700,700);
   background(255);
   smooth();
+  
 }
 
 void draw() {
+  bob.pos.x = mouseX - width/2;
+
   // make sure the 0, 0 point is in the middle of the screen
   translate(width/2 , height/2);
   

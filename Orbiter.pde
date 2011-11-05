@@ -4,6 +4,9 @@ class Orbiter {
   float theta = 0;
   float thetaSpeed = 0.1;
   
+  // let's set a custom x, y for this orbiter
+  PVector pos = new PVector();
+  
   Orbiter() {
     
   }
@@ -14,6 +17,8 @@ class Orbiter {
   
   void render() {
     pushMatrix();
+    
+      translate(pos.x, pos.y);
     
       rotate(theta);
       line(0, 0, radius, 0);
