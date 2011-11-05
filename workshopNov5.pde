@@ -59,4 +59,12 @@ void keyPressed() {
   if (key == 'r') trot = (trot == 0) ? 1:0;
   
   if (key == 'f') tflatness = (tflatness == 0) ? 1:0;
+  
+  if (key == 's') saveImage();
 }
+
+void saveImage() {
+  String timestamp = hour() + "_" + minute() + "_" + second();
+  save("out/" + timestamp + ".png");
+}
+
