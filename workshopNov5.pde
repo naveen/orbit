@@ -31,11 +31,15 @@ void draw() {
   
   rotateX( 1.4 );
 
-  // change tallness of map
-  tdepth = map(mouseY, 0, height, 1, 0);
+  // change tallness of map interactively
+//  tdepth = map(mouseY, 0, height, 1, 0);
   
   // draw a single orbiter
   bob.update();
   bob.render();
 }
 
+void keyPressed() {
+  // toggle depth by keypress
+  if (key == 'd') tdepth = (tdepth == 0) ? (1):(0);
+}
