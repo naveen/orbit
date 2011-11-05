@@ -60,7 +60,8 @@ class Orbiter {
         child.render();
       }
       
-      ellipse(0, 0, 5, 5);
+      // ellipse(0, 0, 5, 5);
+      box(10);
       
       // if we weren't using pushMatrix and popMatrix, then we'd have to layer back out:
       // translate(-radius, 0);

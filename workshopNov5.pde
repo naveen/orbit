@@ -13,11 +13,14 @@ void setup() {
   bob.spawn();
 }
 
+// rotate z (pinwheel); x (foosball); y (ballerina)
 void draw() {
   background(255);
   
   // make sure the 0, 0 point is in the middle of the screen
   translate(width/2 , height/2);
+  
+  rotateX(1.3); // a little bit less than pi/2
   
   // draw a single orbiter
   bob.update();
