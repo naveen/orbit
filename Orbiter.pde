@@ -65,7 +65,8 @@ class Orbiter {
       // ellipse(0, 0, 5, 5);
       noStroke();
       float c = map(generation, 0, 5, 0, 255); // let's map generation to color
-      fill(255, c, 0);
+      colorMode(HSB);
+      fill(c, 255, 255);
       box(map(h, 0, 50, 0, 10));
       
       // if we weren't using pushMatrix and popMatrix, then we'd have to layer back out:
