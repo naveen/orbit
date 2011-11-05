@@ -75,7 +75,7 @@ void keyPressed() {
       println("movie record finished");
     } else {
       recording = true;
-      mm = new MovieMaker(this, width, height, "drawing.mov", 30, MovieMaker.H263, MovieMaker.HIGH);
+      mm = new MovieMaker(this, width, height, "drawing.mov", 30, MovieMaker.JPEG, MovieMaker.HIGH);
       println("movie record started");
     }
   }
