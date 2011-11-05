@@ -64,7 +64,7 @@ class Orbiter {
       
       // ellipse(0, 0, 5, 5);
       noStroke();
-      box(10);
+      box(map(h, 0, 50, 0, 10));
       
       // if we weren't using pushMatrix and popMatrix, then we'd have to layer back out:
       // translate(-radius, 0);
