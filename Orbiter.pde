@@ -6,6 +6,7 @@ class Orbiter {
   
   // let's set a custom x, y for this orbiter
   PVector pos = new PVector();
+  float h = 50;
 
   // array of set number of items  
   // Orbiter[] children = new Orbiter[3];
@@ -48,11 +49,11 @@ class Orbiter {
     
       rotate(theta);
       stroke(0, 50);
-      line(0, 0, radius, 0);
+      line(0, 0, 0, radius, 0, h);
       
       // two ways to do this, one standard, one with translate
       // ellipse(radius, 0, 5, 5);
-      translate(radius, 0);
+      translate(radius, 0, h);
       
       // update and render children
       for (Orbiter child:children) {
