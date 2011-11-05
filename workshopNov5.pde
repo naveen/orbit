@@ -19,6 +19,7 @@ void setup() {
 // rotate z (pinwheel); x (foosball); y (ballerina)
 void draw() {
   // move the depth towards the target depth
+  // (every frame...i move a tenth of the way to my target)
   depth += (tdepth - depth) * 0.1;
   
   background(255);
