@@ -3,6 +3,7 @@ import processing.opengl.*;
 Orbiter bob = new Orbiter();
 
 float depth = 1;
+float tdepth = 1;
 
 void setup() {
   // add 3d renderer, import->opengl
@@ -17,6 +18,9 @@ void setup() {
 
 // rotate z (pinwheel); x (foosball); y (ballerina)
 void draw() {
+  // move the depth towards the target depth
+  depth += (tdepth - depth) * 0.1;
+  
   background(255);
   
   lights();
@@ -27,7 +31,7 @@ void draw() {
   rotateX( 1.4 );
 
   // change tallness of map
-  depth = map(mouseY, 0, height, 1, 0);
+  tdepth = map(mouseY, 0, height, 1, 0);
   
   // draw a single orbiter
   bob.update();
