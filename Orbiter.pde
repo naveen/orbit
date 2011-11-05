@@ -13,6 +13,9 @@ class Orbiter {
   // instead, dynamic array
   ArrayList<Orbiter> children = new ArrayList();
   
+  // so we can next children inside children
+  int generation = 0;
+  
   Orbiter() {
     
   }
@@ -26,6 +29,10 @@ class Orbiter {
       Orbiter child = new Orbiter();
       child.radius = random(50, 200);
       child.thetaSpeed = random(-0.1, 0.1); // theta will be positive/negative (forward/backwards)
+      child.generation = generation + 1;
+      
+      if (child.generation < 3) child.spawn();
+      
       children.add(child);
     }
   }
